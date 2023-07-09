@@ -1,0 +1,88 @@
+@extends('admin.layouts.adminbase')
+
+@section('content')
+
+<div class="users-table">
+    <div class="row">
+        <div class="col-sm-4">
+        <h4 class="card-title mb-0">{{ __('app.Users') }}</h4>
+            <div class="small text-muted">{{ __('app.Total') }} ({{ isset($totalUsers) ? $totalUsers : '' }})</div>
+        </div>
+        <div class="col-sm-4 text-right">
+        <form class="form-horizontal" action="{{ route('users.index') }}" method="GET">
+                @csrf
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <input class="form-control" id="search" type="text" name="search"
+                                placeholder="{{ __('app.Username') }}" autocomplete="username" value="{{ $search ? $search : ''}}">
+                            <span class="input-group-append">
+                                <button class="btn btn-primary btn-sm" type="submit">
+                                <i class="fa fa-search"></i> {{ __('app.Search') }}</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4 text-right">
+            <form action="{{ route('users.create') }}" method="GET">
+                @csrf
+                <button class="btn btn-sm btn-primary" type="submit">
+                    <i class="fa fa-dot-circle-o"></i> {{ __('app.Add_new_user') }}</button>
+            </form>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-12">            
+            @if (isset($users) && $users->count() > 0)
+                <table class="dataTable table table-responsive-sm table-hover table-outline mb-0">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="text-center">
+                                <i class="icon-people"></i>
+                            </th>
+                            <th>{{ __('app.User') }}</th>
+                            <th class="text-center">Email</th>
+                            <th>{{ __('app.Role') }}</th>
+                            <th class="text-center">{{ __('app.Created at') }}</th>
+                            <th>Activity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($users as $user)
+                        <tr>
+                            <td class="text-center">
+                                <i class="icon-people"></i>
+                            </td>
+                            <td>{{ $user->name }}</td>
+                            <td class="text-center">{{ $user->email }}</td>
+                            <td>{{ implode(', ', $user->roles->pluck('name')->toArray() ) }}</td>
+                            <td class="text-center">{{ $user->created_at }}</td>
+                            <td>
+                                <a class="btn btn-success btn-sm" href="{{ route('users.edit', $user->id) }}">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline-block">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-sm" type="submit">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                <br>
+                {{ $users->links() }}
+            
+            @else
+                <div class="text-center">{{ __('app.NotFound') }}</div>
+            @endif
+        </div> <!-- /.col-12 -->
+    </div> <!-- /.row -->
+</div>
+@endsection

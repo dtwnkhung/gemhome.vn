@@ -1,0 +1,104 @@
+.question_list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.question_item {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 15px;
+    /* border: 1px solid; */
+}
+.question_item img {
+    max-width: 100%;
+}
+.input-label-text {
+    font-weight: 600;
+}
+
+.question_item .card.show-card.active {
+    display: none !important;
+}
+.question_item form .card {
+    display: none;
+}
+.question_item form .card.active {
+    display: block;
+}
+
+.card label {
+    font-weight: 600;
+}
+
+.button_edit  {
+    color: #fff;
+    font-weight: 600;
+}
+.select2-container--default .select2-selection--multiple,
+.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+    min-width: 180px ;
+}
+
+.select2.select2-container {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #5c6873;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #e4e7ea;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.form-group .select2-container--default .select2-selection--single {
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+}
+.form-group .select2.select2-container {
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: 2px 6px;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #5c6873;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #e4e7ea;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* HOCVIEN */
+.hocvien_avarta {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+.hocvien_avarta img {
+    max-width: 100%;
+}
+
+
+ul.shortcode-list {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    padding: 15px;
+}
+ul.shortcode-list li {
+    margin-right: 15px ;
+}

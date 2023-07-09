@@ -1,0 +1,267 @@
+.voc-item {
+    background: #fff;
+    margin-bottom: 1px;
+    padding: 15px 0;
+}
+.UIButton-wrapper {
+    max-width: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+.UIButton-wrapper svg {
+    max-width: 100%;
+    height: 30px;
+}
+
+.card-learn {
+    border: 1px solid #eaeaea;
+    margin: 15px auto;
+    padding: 30px 15px;
+    color: #f60;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px 1px #0000;
+    font-weight: 600;
+    text-align: center;
+}
+.card-learn:hover {
+    background:#f60;
+    color:#fff;
+}
+/* FLASHCARDS */
+.btn-radius-long{
+    border-radius: 20px;
+    min-width: 80px;
+}
+.flashcard-sidebar {
+    margin-top: -25px;
+    background-color: #fff;
+    background-color: #fff;
+    overflow: auto; 
+    border-radius: 0px; 
+    border: 1px solid #eaeaea;
+    box-shadow: 0 0 6px 1px #0000000a;
+    margin-bottom: 15px;
+}
+.flash-item {
+    background-color: transparent;
+    position: relative;
+    padding-bottom: 56.25%;
+    margin-bottom: 30px;
+}
+.flash-item .flash-front,
+.flash-item .flash-back {
+    background-color: #fff;
+    border-radius: 2px;    
+    box-shadow: 0 0 6px 1px #0000000a;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-bottom: 56.25%;
+    transition: all ease .3s;
+}
+.flash-item .flash-front {
+    transform: rotateX(-180deg) translateY(5%) scale(1.1);
+    opacity: 0;
+}
+.flash-item.active .flash-front {
+    transform: rotateX(-0deg) translateY(0%) scale(1);
+    opacity: 1;
+}
+.flash-item.active .flash-back {
+    transform: rotateX(-180deg) translateY(5%) scale(1.1);
+    opacity: 0;
+}
+.flashcard_progress {
+    text-align: center;
+    padding: 15px;
+}
+/* flashcardReverse-active */
+.flashcardReverse-active .flash-item .flash-back {
+    transform: rotateX(-180deg) translateY(5%) scale(1.1);
+    opacity: 0;
+}
+.flashcardReverse-active .flash-item .flash-front {
+    transform: rotateX(0deg) translateY(0%) scale(1);
+    opacity: 1;
+}
+.flashcardReverse-active .flash-item.active .flash-front {
+    transform: rotateX(-180deg) translateY(5%) scale(1.1);
+    opacity: 0;
+}
+.flashcardReverse-active .flash-item.active .flash-back {
+    transform: rotateX(-0deg) translateY(0%) scale(1);
+    opacity: 1;
+}
+
+.flash-item .flash-back .flash-voc-content {
+    font-size: 2.5em;
+}
+.flash-voc-content{
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* width: 100%; */
+    padding: 15px;
+    max-height: 100%;
+    overflow: auto;
+}
+.flash-fixed-right {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    z-index: 1;
+}
+
+.box-border-top {
+    border-top: 1px solid #eaeaea;
+    margin-top: 15px;
+    padding: 15px;
+}
+
+@media (max-width: 767px) {
+    .flash-item,
+    .flash-item .flash-front, .flash-item .flash-back {
+        padding-bottom: 100%;
+        margin-bottom: 50px;
+    }
+    .flash-voc-content{
+        width: 94%;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        top: auto;
+        bottom: 0;    
+        background: #fff;
+        padding: 20px;
+        border-radius: 50%;
+    }
+    .swiper-button-next:after, .swiper-button-prev:after { 
+        font-size: 1em;
+    }
+}
+
+.swiper-container {
+    width: 100%;
+    min-height: 300px;
+  }
+
+span.cke_button_icon.cke_button__rubytag_icon {
+    background: transparent url('/assets/ckeditor/plugins/rubytags/icons/rubytags.png') no-repeat center top / 100% 100%;
+}
+
+/* LEARN */
+.question_list .flash-voc-content {
+    width: calc(100% - 30px);
+    margin: auto;
+}
+.flash-voc-content .form-check {
+    text-align: center;
+    position: relative;
+    margin-bottom: 15px;
+}
+.flash-voc-content .form-check .counter-check {
+    text-align: center;
+    position: absolute;
+    font-size: .65em;
+    left: -4px;
+    top: -4px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: #f5f5f5;
+    line-height: 1.4em;
+}
+.flash-voc-content .form-check  input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0; 
+    width: 100%;
+    height: 100%;
+}
+.flash-voc-content .form-check {
+    border: 2px solid gray;
+    border-radius: 15px;
+}
+
+.quiz_options.checked .form-check {
+    border: 2px solid blue;
+}
+.quiz_options.checked .right-option .form-check {
+    border: 2px solid #87d757;
+}
+.right-option.answered.right .form-check {
+    border: 2px solid green;
+    background: green;
+}
+.right-option.answered.right .form-check .form-check-label {
+    color: #fff;
+}
+.quiz_options.checked .answered:not(.right) .form-check {
+    border: 2px solid red;
+}
+
+.hide-attributor {
+    display: none;
+}
+.answered_wrong .hide-attributor {
+    display: block;
+}
+.answered_wrong .flash-voc-image.hd-landscape {
+    display: none;
+}
+
+.detail-options {
+}
+.detail-options > .row > div {
+    display: none;
+}
+.detail-options > .row > div.show {
+    display: block;
+    border-top: 1px solid #eaeaea;    
+    border-bottom: 1px solid #eaeaea;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.btn-next-quiz{
+    width: 100%;
+    margin: 15px auto;
+}
+.hd-landscape {
+    position: relative;
+    height: 0;
+    over-flow: hidden;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+.hd-landscape img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom:0;
+    width:100%;
+    height:100%;
+}
+
+.box-shadow {  
+    border: 1px solid #eaeaea;
+    background: #fff;
+    margin: 0 0 15px 0;
+    box-shadow: 0 5px 15px #0003;
+    padding: 15px;
+}
+
+.qt_attr .form-control {
+    /* border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #909090; */
+    border-bottom-width: 2px;
+}
