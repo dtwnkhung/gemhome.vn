@@ -2214,12 +2214,12 @@
     type='text/css' media='all' />
   <script type='text/javascript' src='https://dor.qodeinteractive.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0'
     id='jquery-core-js'></script>
-  <script>
+  <!-- <script>
     const currentPath = location.pathname
     if(currentPath === "/"){
       document.title = "GEM";
     }
-  </script>
+  </script> -->
   <script type='text/javascript'
     src='https://dor.qodeinteractive.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2'
     id='jquery-migrate-js'></script>
@@ -3740,7 +3740,7 @@
       display: inline-block;
       width: 101px;
       height: 50px;
-      background: transparent url(/wp-content/uploads/2019/03/logo_apex.png) no-repeat center top / 100%;
+      background: transparent url(/wp-content/uploads/2019/03/logo_apex.png) no-repeat center top / 50%;
     }
   </style>
 </body>
